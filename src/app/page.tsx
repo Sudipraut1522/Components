@@ -13,11 +13,11 @@ const Page = () => {
       <h1 className="text-xl font-bold mb-4">Home Page</h1>
       <div className="space-y-4">
         <Button
-         className='bg-red-600'
+        className='bg-red-600 text-xl text-white'
           label="Primary Button"
           onClick={handleClick}
         />
-        
+      
       </div>
     </div>
   );
