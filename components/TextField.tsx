@@ -1,13 +1,15 @@
 "use client";
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 type TextFieldProps = {
   label: string;
-  type: string;
+  type?: 'text'|'email'|'password';
   className?: string;
   labeClassName?: string;
   placeholder?: string;
   id?: string;
+  value:string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -17,10 +19,13 @@ const TextField: React.FC<TextFieldProps> = ({
   placeholder,
   type = "text",
   id,
+  value,
+  onChange,
   ...props
 }) => {
+
   return (
-    <div className="flex flex-col w-full p-4 gap-4 ">
+    <div className="flex flex-col w-full gap-4 ">
       <label
         htmlFor=""
         id={label}
@@ -33,6 +38,8 @@ const TextField: React.FC<TextFieldProps> = ({
         className={`text-l p-2 tracking-wide border-2 border-blue-400 rounded-md focus:outline-none focus:ring-0 focus:ring-blue-500 ${className}`}
         placeholder={placeholder}
         {...props}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );
