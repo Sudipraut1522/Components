@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Button from '../../components/Button/Button';
+import TextField from '../../components/TextField';
 
 const Page = () => {
   const handleClick = () => {
@@ -13,10 +14,10 @@ const Page = () => {
       <h1 className="text-xl font-bold mb-4">Home Page</h1>
       <div className="space-y-4">
         <Button
-        className='bg-red-600 text-xl text-white'
           label="Primary Button"
           onClick={handleClick}
         />
+        <TextField label='Username' type='text' placeholder="username"/>
       
       </div>
     </div>
